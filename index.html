@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Gudi Padwa gargudiiii</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #f5f3ea;
+    color: #2f4f3f;
+    text-align: center;
+}
+
+/* Opening Screen */
+#openScreen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e8efe6;
+}
+
+.open-btn {
+    padding: 15px 40px;
+    font-size: 20px;
+    border: 2px solid #2f4f3f;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.open-btn:hover {
+    background: #2f4f3f;
+    color: #fff;
+}
+
+/* Main Card */
+#card {
+    display: none;
+    padding: 20px;
+}
+
+.card-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fffdf7;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #d4d4c8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.top-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Heading */
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Message */
+.message {
+    font-size: 18px;
+    line-height: 1.7;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Opening Screen -->
+<div id="openScreen">
+    <button class="open-btn" onclick="openCard()">Open Me</button>
+</div>
+
+<!-- Main Card -->
+<div id="card">
+    <div class="card-container">
+
+        <!-- Image -->
+        <img src="https://i.imgur.com/8Km9tLL.jpg" class="top-img">
+
+        <h1>Happy Gudi Padwa</h1>
+
+        <p class="message">
+            As it's called the Marathi New Year and as much as ik its good for new promises and beginings, on this auspicious day  
+            I promise you to be yours forever and love you endlessly.  
+            Let's promise each other to stay together no matter what.  
+            <br><br>
+            Happy Gudi Padwa to my ukdicha modak.  
+            <br><br>
+            And I promise... maybe after 10 years,  
+            we will celebrate our first Gudi Padwa together.  
+        </p>
+
+    </div>
+</div>
+
+<!-- Audio -->
+<audio id="song">
+    <source src="Navasachi Gauri Mazi (From Gharat Ganpati).mp3" type="audio/mp3">
+</audio>
+
+<script>
+function openCard() {
+    document.getElementById("openScreen").style.display = "none";
+    document.getElementById("card").style.display = "block";
+
+    const song = document.getElementById("song");
+    song.currentTime = 66; // 1 min 06 sec
+    song.play();
+}
+</script>
+
+</body>
+</html>
