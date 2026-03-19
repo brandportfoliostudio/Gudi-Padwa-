@@ -3,45 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Gudi Padwa gargudiiii</title>
+
+<title>Happy Gudi Padwa</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
-    background: #f5f3ea;
-    color: #2f4f3f;
-    text-align: center;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #f5f3ea, #e6efe6);
+    overflow-x: hidden;
 }
 
-/* Opening Screen */
+/* OPEN SCREEN */
 #openScreen {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #e8efe6;
+    animation: fadeIn 2s ease;
+}
+
+.open-box {
+    text-align: center;
+    animation: float 3s infinite ease-in-out;
+}
+
+.open-text {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #2f4f3f;
 }
 
 .open-btn {
-    padding: 15px 40px;
-    font-size: 20px;
+    padding: 14px 40px;
+    border-radius: 40px;
     border: 2px solid #2f4f3f;
     background: transparent;
     cursor: pointer;
-    border-radius: 30px;
-    transition: 0.3s;
+    font-size: 18px;
+    transition: 0.4s;
 }
 
 .open-btn:hover {
     background: #2f4f3f;
-    color: #fff;
+    color: white;
 }
 
-/* Main Card */
+/* CARD */
 #card {
     display: none;
-    padding: 20px;
+    padding: 30px 15px;
+    animation: fadeUp 1.5s ease forwards;
 }
 
 .card-container {
@@ -49,55 +67,83 @@ body {
     margin: auto;
     background: #fffdf7;
     padding: 30px;
-    border-radius: 15px;
-    border: 2px solid #d4d4c8;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    border: 2px solid #d8d8c8;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-/* Image */
+/* IMAGE */
 .top-img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 20px;
+    animation: zoomIn 1.5s ease;
 }
 
-/* Heading */
+/* TEXT */
 h1 {
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 15px;
+    color: #2f4f3f;
 }
 
-/* Message */
 .message {
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.8;
+    color: #3a5a40;
 }
-</style>
 
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0);}
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- Opening Screen -->
+<!-- OPEN SCREEN -->
 <div id="openScreen">
-    <button class="open-btn" onclick="openCard()">Open Me</button>
+    <div class="open-box">
+        <div class="open-text">A Small Surprise For You</div>
+        <button class="open-btn" onclick="openCard()">Open Me</button>
+    </div>
 </div>
 
-<!-- Main Card -->
+<!-- MAIN CARD -->
 <div id="card">
     <div class="card-container">
 
-        <!-- Image -->
-        <img src="https://i.imgur.com/8Km9tLL.jpg" class="top-img">
+        <!-- IMAGE -->
+        <img src="image.jpg" class="top-img">
 
-        <h1>Happy Gudi Padwa</h1>
+        <h1>Happy Gudi Padwa 💚</h1>
 
         <p class="message">
-            As it's called the Marathi New Year and as much as ik its good for new promises and beginings, on this auspicious day  
+            As it's called the Marathi New Year..as much as ik this day is really good for new promises too , so on this auspicious day  
             I promise you to be yours forever and love you endlessly.  
             Let's promise each other to stay together no matter what.  
             <br><br>
-            Happy Gudi Padwa to my ukdicha modak.  
+            Happy Gudi Padwa, my majhi ukdicha modak.  
             <br><br>
             And I promise... maybe after 10 years,  
             we will celebrate our first Gudi Padwa together.  
@@ -106,7 +152,7 @@ h1 {
     </div>
 </div>
 
-<!-- Audio -->
+<!-- AUDIO -->
 <audio id="song">
     <source src="Navasachi Gauri Mazi (From Gharat Ganpati).mp3" type="audio/mp3">
 </audio>
@@ -116,8 +162,8 @@ function openCard() {
     document.getElementById("openScreen").style.display = "none";
     document.getElementById("card").style.display = "block";
 
-    const song = document.getElementById("song");
-    song.currentTime = 66; // 1 min 06 sec
+    let song = document.getElementById("song");
+    song.currentTime = 66;
     song.play();
 }
 </script>
